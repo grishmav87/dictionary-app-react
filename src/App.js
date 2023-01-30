@@ -4,13 +4,28 @@ import Dictionary from "./Dictionary";
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <div className="App">
-        <header className="App-header">
-          <h1>Dictionary</h1>
-        </header>
-        <Dictionary />
+        <Dictionary defaultSearchword="orangutan" />
       </div>
+
+      <footer>
+        <a
+          href="https://github.com/grishmav87/dictionary-app-react"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open-source code
+        </a>{" "}
+        by Grishma V.{" "}
+        <a
+          href="https://gilded-phoenix-721b05.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          hosted on Netlify
+        </a>
+      </footer>
     </div>
   );
 }
