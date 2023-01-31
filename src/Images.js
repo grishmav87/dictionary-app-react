@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Images(props) {
-  console.log(props.images);
   if (props.images) {
     return (
       <section className="images">

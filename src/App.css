@@ -25,3 +25,9 @@ section {
 .images img {
   border-radius: 5px;
 }
+.Meaning .example {
+  color: maroon;
+}
+.Phonetics a {
+  text-decoration: none;
+}
