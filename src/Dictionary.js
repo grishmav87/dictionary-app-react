@@ -21,19 +21,17 @@ export default function Dictionary(props) {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchword}`;
     axios.get(apiUrl).then(handleDictionaryResponse);
 
-    let pexelsApiKey =
-      "IMIYPwgzZaq07zZlUnQ0phwQP78QP9J23z2AWLdVhqI2e8vuSV88CslV";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchword}&per_page=12`;
-    let authorizationHeader = { Authorization: `Bearer ${pexelsApiKey}` };
-    axios
-      .get(pexelsApiUrl, { headers: authorizationHeader })
-      .then(handlePexelsResponse);
+    let photosApiKey = "eoabf00bft0a33ded02a540cba2b4338";
+    let photosApiUrl = `https://api.shecodes.io/images/v1/search?query=${searchword}&key=${photosApiKey}`;
+
+    axios.get(photosApiUrl).then(handlePhotosResponse);
   }
 
   function handleDictionaryResponse(response) {
     setResults(response.data[0]);
   }
-  function handlePexelsResponse(response) {
+  function handlePhotosResponse(response) {
+    console.log(response.data.photos);
     setImages(response.data.photos);
   }
   function load() {
